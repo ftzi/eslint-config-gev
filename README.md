@@ -1,7 +1,6 @@
 <div align='center'>
 
 [![npm](https://img.shields.io/npm/v/eslint-config-gev)](https://www.npmjs.com/package/eslint-config-gev)
-[![npm](https://img.shields.io/npm/dw/eslint-config-gev)](https://www.npmjs.com/package/eslint-config-gev)
 </div>
 
 # eslint-config-gev
