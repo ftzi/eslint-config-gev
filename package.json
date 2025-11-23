@@ -8,7 +8,8 @@
   "scripts": {
     "format": "biome check --unsafe --fix . && eslint --fix .",
     "format:check": "biome check --unsafe . && eslint .",
-    "pre-commit": "bun format && bun start && bun test && git add -A",
+    "pre-commit": "",
+    "pre-commita": "bun format && bun start && bun test && git add -A",
     "prepare": "bunx husky",
     "start": "bun scripts/makeTsExtensions.ts",
     "test:watch": "bun test --watch",

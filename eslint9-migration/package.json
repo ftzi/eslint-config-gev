@@ -1,0 +1,80 @@
+{
+  "name": "eslint-config-gev",
+  "version": "5.0.0",
+  "description": "Curated ESLint 9 configs for TS, JS, Next, and React projects",
+  "author": "SrBrahma",
+  "type": "module",
+  "main": "./src/index.js",
+  "bin": "./bin.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./javascript": "./src/configs/javascript.js",
+    "./typescript": "./src/configs/typescript.js",
+    "./react": "./src/configs/react.js",
+    "./next": "./src/configs/next.js"
+  },
+  "scripts": {
+    "format": "biome check --unsafe --fix . && eslint --fix .",
+    "format:check": "biome check --unsafe . && eslint .",
+    "typecheck": "tsc --noEmit",
+    "typecheck:watch": "tsc --noEmit --watch",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "check": "bun run typecheck && bun run lint:check",
+    "pre-commit": "bun format && bun run generate-extensions && bun test && git add -A",
+    "prepare": "bunx husky",
+    "generate-extensions": "bun scripts/generate-ts-extensions.js",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "validate": "bun scripts/validate-configs.js",
+    "update-deps": "bunx npm-check-updates -i"
+  },
+  "files": [
+    "src/**/*",
+    "examples/**/*",
+    "bin.js"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/SrBrahma/eslint-config-gev#readme",
+  "keywords": [
+    "gev",
+    "eslint",
+    "eslint-config",
+    "eslint9",
+    "flat-config",
+    "typescript",
+    "react",
+    "javascript"
+  ],
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin": "^5.6.1",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "citty": "^0.1.6",
+    "eslint-config-biome": "^2.1.3",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsdoc": "^61.4.1",
+    "eslint-plugin-no-relative-import-paths": "^1.6.0",
+    "eslint-plugin-prefer-arrow-functions": "^3.4.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "eslint-plugin-unused-imports": "^4.1.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.7",
+    "@types/bun": "^1.1.14",
+    "@types/eslint": "^9.6.0",
+    "@types/node": "^24.10.1",
+    "eslint": "^9.0.0",
+    "husky": "^9.1.7",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
